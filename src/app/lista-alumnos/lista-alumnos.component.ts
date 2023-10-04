@@ -12,4 +12,26 @@ export class ListaAlumnosComponent  implements OnInit {
   ngOnInit() {}
   alumnos : any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
   verdadero : boolean = true;
+  public actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
 }
