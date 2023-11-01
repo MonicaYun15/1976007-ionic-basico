@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { alumno } from './alumno.model';
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -9,8 +10,25 @@ export class ListaAlumnosComponent  implements OnInit {
 
   constructor() { }
 
+
+  alumno: alumno = {
+    nombre: '',
+   presente: false 
+  }
+
   ngOnInit() {}
-  alumnos : any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
+  
+  agregarAlumno(): void {
+    this.alumnos.push(this.alumno);
+    this.alumno = {
+      nombre : '',
+      presente: false
+    }
+    
+  }
+
+  alumnos : any = [];
+ 
   verdadero : boolean = true;
   public actionSheetButtons = [
     {
@@ -34,4 +52,5 @@ export class ListaAlumnosComponent  implements OnInit {
       },
     },
   ];
+  
 }

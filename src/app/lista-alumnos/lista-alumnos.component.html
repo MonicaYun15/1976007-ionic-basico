@@ -1,4 +1,15 @@
 
+<form #alumnoform = "ngForm" (ngSubmit)="agregarAlumno()">
+  <ion-label>Nombre del alumno</ion-label>
+  <ion-input required [(ngModel)] = "alumno.nombre" name="nombre"></ion-input>
+  <ion-label>
+    <ion-checkbox required [(ngModel)] = "alumno.presente" name="presente" ></ion-checkbox>
+  </ion-label>
+  <div>
+    <ion-button type="submit">Agregar</ion-button>
+  </div>
+</form>
+
 <div>
   <ion-list>
     <ion-item-sliding *ngFor="let alumno of alumnos; index as i">
@@ -11,7 +22,7 @@
         </ion-item-option>
       </ion-item-options>
     <ion-item lines="inset">
-      {{alumno}}
+      {{alumno.nombre}}
     </ion-item>
     <ion-item-options side="end">
       <ion-item-option>
@@ -26,7 +37,4 @@
   </ion-item-sliding>
 
   </ion-list> 
-
-
-
 </div>
