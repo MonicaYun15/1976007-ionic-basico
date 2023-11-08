@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
+import { CameraComponent } from './camera/camera.component';
 
 const routes: Routes = [
   {
@@ -10,12 +11,12 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'alumnos',
-    component: ListaAlumnosComponent,
+    path: 'camera',
+    component: CameraComponent,
   },
   {
     path: '',
-    redirectTo: '/alumnos',
+    redirectTo: '/camera',
     pathMatch: 'full'
   },
   {
